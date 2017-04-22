@@ -64,7 +64,7 @@ class LoginForm extends Model
                     $admin->last_login_ip=$_SERVER['REMOTE_ADDR'];
                     $admin->save();
 
-                    \Yii::$app->user->login($num,$this->cook ? time()+3600 : '');
+                    \Yii::$app->user->login($num,$this->cook ? time()*3600*24*7 : 0);
 //                    var_dump($this->cook);exit;
 
                  /*   if($this->cook){

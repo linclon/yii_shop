@@ -16,11 +16,12 @@ return [
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => \frontend\models\Member::className(),//实现接口的类
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
         'session' => [
+//            'class' => 'yii\redis\Session',
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
         ],
@@ -41,8 +42,13 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                //如果请求是前一个,变成后一个
+                'api/getYourFav'=>'api/get-your-fav'
             ],
         ],
+        'CartCookieHandler' => [
+            'class' => \frontend\components\CartCookieHandler::className(),
+        ]
 
     ],
     'params' => $params,

@@ -133,6 +133,7 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
     public function getAuthKey()
     {
         // TODO: Implement getAuthKey() method.
+        //return $this->getAuthKey();
     }
 
     /**
@@ -146,6 +147,7 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
     public function validateAuthKey($authKey)
     {
         // TODO: Implement validateAuthKey() method.
+        //return $this->authKey == $authKey;
     }
 
 
